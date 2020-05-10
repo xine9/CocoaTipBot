@@ -60,7 +60,7 @@ module.exports.withdraw = async ctx => {
       msg += withdrawResult;
     } else {
       if (amount < withdrawLimit) {
-        msg += `Withdraw limit : ${withdrawLimit}`;
+        msg += `The withdraw limit is: ${withdrawLimit} 🥛COCOA🍫`;
       } else if (wallet.cocoaPoints < amount) {
         //Not enough
         msg += `⚠Wrong amount ${args[0]}, you don't have enough 🥛COCOA🍫, Your balance is:${wallet.cocoaPoints}`;
