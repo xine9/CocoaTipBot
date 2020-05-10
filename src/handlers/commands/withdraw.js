@@ -63,12 +63,12 @@ module.exports.withdraw = async ctx => {
         msg += `The withdraw limit is: ${withdrawLimit} 🥛COCOA🍫`;
       } else if (wallet.cocoaPoints < amount) {
         //Not enough
-        msg += `⚠Wrong amount ${args[0]}, you don't have enough 🥛COCOA🍫, Your balance is:${wallet.cocoaPoints}`;
+        msg += `You don't have enough 🥛COCOA🍫, Your balance is :${wallet.cocoaPoints} 🥛COCOA🍫`;
       } else if (delta < withdrawDelayTime) {
         const left = (withdrawDelayTime - delta).toFixed(2);
-        msg += `⚠Sorry, you can't withdraw tokens during: ${left} min.\nPlease wait.`;
+        msg += `⚠ Sorry, you can't withdraw tokens during: ${left} min.\nPlease wait.`;
       } else if (amount > withdrawMaximum) {
-        msg += `⚠Sorry, the maximum withdrawal is ${withdrawMaximum} 🥛COCOA🍫.`;
+        msg += `The maximum withdrawal is ${withdrawMaximum} 🥛COCOA🍫.`;
       } else {
         //Wrong amount
         msg += `Wrong amount: ${args[0]}`;
@@ -79,7 +79,7 @@ module.exports.withdraw = async ctx => {
   } else {
     // Wrong command format! to withdraw tokens use follow format
     msg += `
-🥛*HOW TO WITHDRAW*🍫\nTo withdraw tokens the proper syntax is:\n\n*/withdraw "amount" "simpleledger address"*
+🥛*HOW TO WITHDRAW*🍫\nTo withdraw COCOA the proper syntax is:\n\n*/withdraw "amount" "simpleledger address"*
 \n\nExample:\n\n/withdraw 10 simpleledger:123456abcdefg123456abcdefg123456abcdefg`;
   }
 
