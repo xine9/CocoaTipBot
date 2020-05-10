@@ -63,7 +63,7 @@ module.exports.withdraw = async ctx => {
         msg += `The withdraw limit is: ${withdrawLimit} 🥛COCOA🍫`;
       } else if (wallet.cocoaPoints < amount) {
         //Not enough
-        msg += `You don't have enough 🥛COCOA🍫, Your balance is :${wallet.cocoaPoints} 🥛COCOA🍫`;
+        msg += `You don't have enough 🥛COCOA🍫, Check your balance and try again.`;
       } else if (delta < withdrawDelayTime) {
         const left = (withdrawDelayTime - delta).toFixed(2);
         msg += `⚠ Sorry, you can't withdraw tokens during: ${left} min.\nPlease wait.`;
