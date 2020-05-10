@@ -63,12 +63,12 @@ module.exports.withdraw = async ctx => {
         msg += `Withdraw limit : ${withdrawLimit}`;
       } else if (wallet.cocoaPoints < amount) {
         //Not enough
-        msg += `Wrong amount ${args[0]}, you don't have enough tokens:${wallet.cocoaPoints}`;
+        msg += `⚠Wrong amount ${args[0]}, you don't have enough 🥛COCOA🍫, Your balance is:${wallet.cocoaPoints}`;
       } else if (delta < withdrawDelayTime) {
         const left = (withdrawDelayTime - delta).toFixed(2);
-        msg += `Sorry, you can't withdraw tokens during: ${left} min.\nPlease wait.`;
+        msg += `⚠Sorry, you can't withdraw tokens during: ${left} min.\nPlease wait.`;
       } else if (amount > withdrawMaximum) {
-        msg += `Sorry, you can't withdraw more than ${withdrawMaximum} tokens.`;
+        msg += `⚠Sorry, the maximum withdrawal is ${withdrawMaximum} 🥛COCOA🍫.`;
       } else {
         //Wrong amount
         msg += `Wrong amount: ${args[0]}`;
